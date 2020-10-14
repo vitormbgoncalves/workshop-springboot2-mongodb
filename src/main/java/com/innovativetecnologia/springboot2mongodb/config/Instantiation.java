@@ -2,6 +2,7 @@ package com.innovativetecnologia.springboot2mongodb.config;
 
 import com.innovativetecnologia.springboot2mongodb.domain.Post;
 import com.innovativetecnologia.springboot2mongodb.domain.User;
+import com.innovativetecnologia.springboot2mongodb.dto.AuthorDTO;
 import com.innovativetecnologia.springboot2mongodb.repository.PostRepository;
 import com.innovativetecnologia.springboot2mongodb.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.TimeZone;
 
@@ -35,10 +35,12 @@ public class Instantiation implements CommandLineRunner {
         User alex = new User(null, "Alex Green", "alex@gmail.com");
         User bob = new User(null, "Bob Grey", "bob@gmail.com");
 
-        Post pos1 = new Post(null, sdf.parse("21/03/2018"), "Partiu viagem", "Vou viajar para São Paulo. Abraços!", maria);
-        Post pos2 = new Post(null, sdf.parse("23/03/2018"), "Bom dia", "Acordei felix hoje!", maria);
-
         userRepository.saveAll(Arrays.asList(maria, alex, bob));
+
+        Post pos1 = new Post(null, sdf.parse("21/03/2018"), "Partiu viagem", "Vou viajar para São Paulo. Abraços!", new AuthorDTO(maria));
+        Post pos2 = new Post(null, sdf.parse("23/03/2018"), "Bom dia", "Acordei felix hoje!", new AuthorDTO(maria));
+
+
         postRepository.saveAll(Arrays.asList(pos1, pos2));
     }
 }
