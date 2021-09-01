@@ -14,7 +14,7 @@ The code consists of Rest Web Services built with Spring Boot and Spring Data Mo
 - [**Spring Data MongoDB**](https://spring.io/projects/spring-data-mongodb) - to access database;
 - [**MongoDB**](https://www.mongodb.com/) - for database;
 - [**Postman**](https://www.postman.com/) - for API development testing;
-- [**Heroku**](https://heroku.co) - for deployment and production testing;
+- [**Heroku**](https://heroku.co) - for deployment and production testing.
 
 ## 💻 Running
 
